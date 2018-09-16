@@ -1,0 +1,5 @@
+{
+    "token": "REPLACE-TOKEN-HERE",
+    "prefix": "!",
+    "enqueueMessageCount": 10
+}
