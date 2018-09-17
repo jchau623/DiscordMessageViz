@@ -1,6 +1,7 @@
 /* NODE DEPENDENCIES */
 const Discord = require('discord.js');
 const Debounce = require('debounce');
+const MySql = require('mysql');
 
 /* LOCAL DEPENDENCIES */
 const config = require('./config/config.json');
@@ -20,6 +21,21 @@ client.login(config.token)
 		/*
 			Login to amazon rds instance
 		*/
+		let conn = mysql.createConnection({
+			host: config.host,
+			user: config.username,
+			password: config.password,
+			port: config.port
+		});
+
+		conn.connect(err => {
+			console.log("!!");
+			if (err) {
+				console.log(err);
+			} else {
+				console.log("success");
+			}
+		});
 	})
 	.catch(function(error) {
 		/*r
@@ -46,7 +62,7 @@ let processMessage = function() {
 		channelMap[oMsg.channel.id].push(oMsg);
 	});
 	aQueuedUpMessages = [];
-	
+
 	// Temp fn definition for now to test debounce, combine messages for each channel and send
 	Object.keys(channelMap).forEach(sChannelKey => {
 		let sMsg = "";

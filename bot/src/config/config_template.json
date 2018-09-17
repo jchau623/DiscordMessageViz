@@ -1,5 +1,11 @@
 {
     "token": "REPLACE-TOKEN-HERE",
     "prefix": "!",
-    "enqueueMessageCount": 10
+    "enqueueMessageCount": 10,
+    "dbConnParams": {
+    	"host": "REPLACE-TOKEN-HERE",
+    	"username": "REPLACE-TOKEN-HERE",
+    	"password": "REPLACE-TOKEN-HERE",
+    	"port": "REPLACE-TOKEN-HERE"
+    }
 }
